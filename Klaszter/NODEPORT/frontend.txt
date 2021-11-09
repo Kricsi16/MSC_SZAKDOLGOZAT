@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ecmpfe3
+  labels:
+    app: frontend-app
+spec:
+  nodeName: worker3
+  hostAliases:
+  - ip: "10.200.0.253"
+    hostnames:
+    - "hello"
+  containers:
+  - name: teszt
+    image: frontendubuntu:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 80
+      capabilities:
+        add:
+          - ALL
+      privileged: true

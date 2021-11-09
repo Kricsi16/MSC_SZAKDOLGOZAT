@@ -1,0 +1,5 @@
+klaszter telepítése
+
+git repóból kódok
+https://github.com/danielkeszei/thesis_scripts
+

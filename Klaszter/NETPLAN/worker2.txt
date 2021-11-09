@@ -1,0 +1,26 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eno1:
+      dhcp4: true
+    enp3s0f1:
+      dhcp4: true
+    enp6s0f0:
+      dhcp4: true
+    enp6s0f1:
+      addresses:
+      - 172.16.232.3/24
+      gateway4: 172.16.232.252
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 8.8.4.4
+
+  vlans:
+    vlan100:
+      id: 100
+      link: enp6s0f1
+    vlan200:
+      id: 200
+      link: enp6s0f1
+  version: 2
