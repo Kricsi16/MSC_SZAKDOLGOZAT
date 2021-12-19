@@ -17,7 +17,8 @@ spec:
   selector:
     matchLabels:
        app: sticky-fe
- nodeName: worker1
+       
+  nodeName: worker1
   hostAliases:
   - ip: "10.200.0.253"
     hostnames:
