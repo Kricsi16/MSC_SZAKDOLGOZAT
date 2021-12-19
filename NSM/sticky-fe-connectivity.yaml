@@ -1,0 +1,19 @@
+kind: NetworkService
+apiVersion: v1
+metadata:
+  name: sticky-fe-connectivity
+spec:
+  payload: IP
+  matches:
+  	- match:
+  	route:
+     	- destination:
+       	destinationSelector:
+       	    app: sticky-fe
+  	- match:
+    	sourceSelector:
+       	   app: backend-nsc
+  	route:
+     	- destination:
+       	destinationSelector:
+                 app: sticky-fe
