@@ -39,8 +39,8 @@ spec:
         - name: nsm-socket
           mountPath: /var/lib/networkservicemesh
         resources:
-        	 limits:
-          	 networkservicemesh.io/socket: 1
+        	limits:
+          	networkservicemesh.io/socket: 1
     - name: fe-nsc
       image: ubuntu:latest
       imagePullPolicy: Never
