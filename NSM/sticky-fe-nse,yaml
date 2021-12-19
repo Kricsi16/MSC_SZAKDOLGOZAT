@@ -38,7 +38,6 @@ spec:
         volumeMounts:
         - name: nsm-socket
           mountPath: /var/lib/networkservicemesh
-          readOnly: true
         resources:
         	 limits:
           	 networkservicemesh.io/socket: 1
