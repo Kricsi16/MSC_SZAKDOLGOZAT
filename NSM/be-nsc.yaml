@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod  
+metadata:
+  name: backend-nsc
+  
+annotations:
+  ns.networkservicemesh.io: sticky-fe-connectivity/nsm0?app=sticky-fe
+spec: 
+  nodeName: worker1
+  containers:
+    - name: be1
+      image: "mybackend:latest"
+      imagePullPolicy: Never
+      ports:
+        - name: http
+          containerPort: 80
+      env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+      securityContext:
+          capabilities:
+          add:
+            - NET_ADMIN
