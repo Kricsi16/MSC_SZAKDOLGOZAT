@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Pod  
 metadata:
-  name: backend-nsc
-  
+  name: backend-nsc  
 annotations:
   ns.networkservicemesh.io: sticky-fe-connectivity/nsm0?app=sticky-fe
 spec: 
