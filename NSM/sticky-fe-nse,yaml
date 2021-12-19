@@ -12,7 +12,6 @@ metadata:
               "gateway": [ "10.200.0.254" ],
               "default-route": ["10.200.0.254" ]
             }]'
-
 spec:
   selector:
     matchLabels:
@@ -28,7 +27,6 @@ spec:
      	image: raffaeletrani/sidecar-nse
       imagePullPolicy: IfNotPresent
       env:
-      
         - name: ENDPOINT_NETWORK_SERVICE
           value: "sticky-fe-connectivity"
         - name: ENDPOINT_LABELS
